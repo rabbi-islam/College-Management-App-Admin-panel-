@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "126776414821",
+    "project_id": "college-app-bda34",
+    "storage_bucket": "college-app-bda34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:126776414821:android:123abf82c87741eef0ac8c",
+        "android_client_info": {
+          "package_name": "com.example.admincollege"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "126776414821-paaeqnlge1fqvjsprutg97qr2co82mfm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAv6qj27n3bAm292usbXQXG7ekGenC0p1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "126776414821-paaeqnlge1fqvjsprutg97qr2co82mfm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
