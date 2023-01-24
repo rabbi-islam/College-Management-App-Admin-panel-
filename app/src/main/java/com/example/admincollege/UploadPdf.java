@@ -39,7 +39,7 @@ public class UploadPdf extends AppCompatActivity {
     private StorageReference storageReference;
     ProgressDialog pd;
     String downloadUrl = "";
-    private String finalPdfName;
+    private String finalPdfName, pdfTitleName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +60,25 @@ public class UploadPdf extends AppCompatActivity {
                 openGallery();
             }
         });
+
+        uploadPdfBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pdfTitleName = pdfTitle.getText().toString();
+                if (pdfTitleName.isEmpty()){
+                    pdfTitle.setError("Title Must Not Be Empty");
+                    pdfTitle.requestFocus();
+                }else if (finalPdfName==null){
+                    Toast.makeText(UploadPdf.this, "please upload a pdf file!", Toast.LENGTH_SHORT).show();
+                }else{
+                    uploadPdfToFireStorage();
+                }
+
+            }
+        });
+    }
+
+    private void uploadPdfToFireStorage() {
     }
 
     private void openGallery() {
