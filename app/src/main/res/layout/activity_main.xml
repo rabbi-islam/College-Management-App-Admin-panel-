@@ -125,8 +125,7 @@
                     android:layout_height="64dp"
                     android:background="@drawable/circle_pink"
                     android:padding="15dp"
-                    android:src="@drawable/ic_upload">
-                </ImageView>
+                    android:src="@drawable/ic_upload"></ImageView>
 
                 <View
                     android:layout_width="match_parent"

@@ -6,11 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.admincollege.faculty.UpdateFaculty;
 import com.google.android.material.card.MaterialCardView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    MaterialCardView uploadNotice,addGalleryImage,addEbook;
+    MaterialCardView uploadNotice,addGalleryImage,addEbook,updateFaculty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +21,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         uploadNotice = findViewById(R.id.addNotice);
         addGalleryImage = findViewById(R.id.addGallery);
         addEbook = findViewById(R.id.addEbook);
+        updateFaculty = findViewById(R.id.addFaculty);
         uploadNotice.setOnClickListener(this);
         addGalleryImage.setOnClickListener(this);
         addEbook.setOnClickListener(this);
+        updateFaculty.setOnClickListener(this);
     }
 
     @Override
@@ -36,6 +39,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.addEbook:
                 startActivity(new Intent(MainActivity.this,UploadPdf.class));
+                break;
+            case R.id.addFaculty:
+                startActivity(new Intent(MainActivity.this, UpdateFaculty.class));
                 break;
         }
 
