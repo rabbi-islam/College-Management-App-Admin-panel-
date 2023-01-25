@@ -1,5 +1,6 @@
 package com.example.admincollege;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +17,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textfield.TextInputEditText;
@@ -23,9 +28,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 
 public class UploadPdf extends AppCompatActivity {
 
@@ -68,7 +75,7 @@ public class UploadPdf extends AppCompatActivity {
                 if (pdfTitleName.isEmpty()){
                     pdfTitle.setError("Title Must Not Be Empty");
                     pdfTitle.requestFocus();
-                }else if (finalPdfName==null){
+                }else if (pdfUri==null){
                     Toast.makeText(UploadPdf.this, "please upload a pdf file!", Toast.LENGTH_SHORT).show();
                 }else{
                     uploadPdfToFireStorage();
@@ -79,6 +86,48 @@ public class UploadPdf extends AppCompatActivity {
     }
 
     private void uploadPdfToFireStorage() {
+        pd.setTitle("please Wait...");
+        pd.setMessage("Uploading Pdf");
+        pd.show();
+        StorageReference streference = storageReference.child("pdf/"+finalPdfName+"-"+System.currentTimeMillis()+".pdf");
+        streference.putFile(pdfUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Task<Uri> uriTask  = taskSnapshot.getStorage().getDownloadUrl();
+                while (!uriTask.isComplete());
+                Uri uri = uriTask.getResult();
+                uploadPdfData(String.valueOf(uri));
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                pd.dismiss();
+                Toast.makeText(UploadPdf.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private void uploadPdfData(String downloadUrl) {
+        String uniqueKeys = databaseReference.child("pdf").push().getKey();
+
+        HashMap data = new HashMap();
+        data.put("title",pdfTitleName);
+        data.put("url",downloadUrl);
+
+        databaseReference.child("pdf").child(uniqueKeys).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                pd.dismiss();
+                Toast.makeText(UploadPdf.this, "Uploaded Successfully!", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                pd.dismiss();
+                Toast.makeText(UploadPdf.this, "Failed to upload pdf!", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void openGallery() {
