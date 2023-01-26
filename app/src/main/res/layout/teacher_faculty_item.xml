@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1.5"
+                android:paddingLeft="12dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/teacherName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Md Rabbi Islam"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp">
+                </TextView>
+                <TextView
+                    android:id="@+id/teacherPost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Principal"
+                    android:textColor="@color/textColor"
+                    android:textSize="16sp">
+                </TextView>
+                <TextView
+                    android:id="@+id/teacherEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="rabbi@gmail.com"
+                    android:textColor="@color/textColor"
+                    android:textSize="16sp">
+                </TextView>
+                <Button
+                   android:id="@+id/teacherUpdateBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Update Info">
+
+                </Button>
+            </LinearLayout>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/teacherImage"
+                android:layout_width="100dp"
+                android:layout_height="130dp"
+                android:layout_weight="0.5"
+                android:src="@drawable/avatarprofile"
+                android:layout_gravity="center">
+
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

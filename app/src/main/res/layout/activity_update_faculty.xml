@@ -19,4 +19,151 @@
 
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Computer Science"
+                android:textSize="22sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/textColor">
+
+            </TextView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c1c1c1"
+                android:layout_marginVertical="8dp">
+            </View>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/csDepartment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:visibility="gone">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <LinearLayout
+                android:id="@+id/csNoData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <include layout="@layout/no_data_found"></include>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Software Engineering"
+                android:textSize="22sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/textColor">
+
+            </TextView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c1c1c1"
+                android:layout_marginVertical="8dp">
+            </View>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/softwareDepartment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:visibility="gone">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <LinearLayout
+                android:id="@+id/softwareNoData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <include layout="@layout/no_data_found"></include>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Electrical Engineering"
+                android:textSize="22sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/textColor">
+
+            </TextView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c1c1c1"
+                android:layout_marginVertical="8dp">
+            </View>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/electricalDepartment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:visibility="gone">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <LinearLayout
+                android:id="@+id/electricalNoData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <include layout="@layout/no_data_found"></include>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Food Engineering"
+                android:textSize="22sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/textColor">
+
+            </TextView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c1c1c1"
+                android:layout_marginVertical="8dp">
+            </View>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/nfeDepartment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:visibility="gone">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <LinearLayout
+                android:id="@+id/nfeNoData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <include layout="@layout/no_data_found"></include>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

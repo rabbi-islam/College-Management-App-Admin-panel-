@@ -17,6 +17,13 @@
         android:theme="@style/Theme.AdminCollege"
         tools:targetApi="31">
         <activity
+            android:name=".UpdateTeacher"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".faculty.AddTeacher"
             android:exported="false">
             <meta-data
