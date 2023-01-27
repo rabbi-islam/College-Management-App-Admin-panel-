@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/avatarprofile">
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="My College App"
+                android:layout_marginLeft="16dp"
+                android:textSize="17dp"
+                android:textColor="@color/textColor">
+
+            </TextView>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/deleteNotice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="delete"
+                android:layout_marginLeft="-100dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton">
+
+            </com.google.android.material.button.MaterialButton>
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/deleteNoticeTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My College App is the first app that I am currently developing."
+            android:textSize="16dp"
+            android:textColor="@color/textColor">
+
+        </TextView>
+        <ImageView
+            android:id="@+id/deleteNoticeImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitXY"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="#c1c1c1"/>
+</com.google.android.material.card.MaterialCardView>
